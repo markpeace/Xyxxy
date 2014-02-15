@@ -6,10 +6,10 @@
         id        = "com.mmu.bbb"
         version   = "1.0.0">
 
-    <name>The Birley Big Bang</name>
+    <name>Xyxxy</name>
 
     <description>
-        An app to support induction for the Faculties of Education and Health, Psychology and Social Care
+        An app for creating and consuming text-adventures embedded in real geographies.
     </description>
 
     <author href="http://www.mmu.ac.uk/ioe" email="m.peace@mmu.ac.uk">
