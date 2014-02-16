@@ -1,12 +1,3 @@
-function onDeviceReady() {
-  console.log('start');
-  angular.module('ngView', [], function($routeProvider, $locationProvider) {
-
-  });
-  angular.bootstrap(document, ['ngView']);
-}
-
-
 //Define an angular module for our app
 var xyxxy = angular.module('xyxxy', ['ngRoute', 'ionic'])
  
