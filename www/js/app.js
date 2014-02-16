@@ -7,29 +7,14 @@ var xyxxy = angular.module('xyxxy', ['ngRoute', 'ionic'])
 .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/AddNewOrder', {
+      when('/user/splash', {
         templateUrl: 'pages/user/splash.html',
-        controller: 'AddOrderController'
+        controller: 'UserSplash'
     }).
-      when('/ShowOrders', {
-        templateUrl: 'pages/user/splash.html',
-        controller: 'ShowOrdersController'
-      }).
       otherwise({
-        redirectTo: '/AddNewOrder'
+        redirectTo: '/user/splash'
       });
 }])
  
  
-.controller('AddOrderController', function($scope) {
-     
-    $scope.message = 'This is Add new order screen';
-     
-})
- 
- 
-.controller('ShowOrdersController', function($scope) {
- 
-    $scope.message = 'This is Show orders screen';
- 
-});
+.controller('UserSplash', function($scope) { });
