@@ -32,5 +32,3 @@ var xyxxy = angular.module('xyxxy', ['ngRoute', 'ionic'])
 		{ id:2, title: 'Five Go On A Sailing Adventure', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' }
 	];
 });
-
-alert("hipp");
