@@ -20,15 +20,11 @@ var xyxxy = angular.module('xyxxy', ['ngRoute', 'ionic'])
       });
 }])
  
- 
-.controller('UserSplash', function($scope) { })
- 
-.controller('StoriesIndex', function($scope) {
-	$scope.stories =[
-		{ id:1, title: 'Alice in Wonderland', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
-		{ id:1, title: 'The Philosophers Stone', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
-		{ id:1, title: 'King Kong', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
-		{ id:1, title: 'The Magic Faraway Tree', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
-		{ id:2, title: 'Five Go On A Sailing Adventure', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' }
-	];
+ .controller('StoriesIndex', function($scope, $http) { 
+
+	$http.get('/test/mockdata.json').success(function(d){
+		$scope.stories=d;
+	});
+	
 });
+
