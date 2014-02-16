@@ -11,10 +11,24 @@ var xyxxy = angular.module('xyxxy', ['ngRoute', 'ionic'])
         templateUrl: 'pages/user/splash.html',
         controller: 'UserSplash'
     }).
+	when('/stories/index', {
+        templateUrl: 'pages/stories/index.html',
+        controller: 'StoriesIndex'
+    }).
       otherwise({
-        redirectTo: '/user/splash'
+        redirectTo: '/stories/index'
       });
 }])
  
  
-.controller('UserSplash', function($scope) { });
+.controller('UserSplash', function($scope) { })
+ 
+.controller('StoriesIndex', function($scope) {
+	$scope.stories =[
+		{ id:1, title: 'Alice in Wonderland', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
+		{ id:1, title: 'The Philosophers Stone', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
+		{ id:1, title: 'King Kong', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
+		{ id:1, title: 'The Magic Faraway Tree', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' },
+		{ id:2, title: 'Five Go On A Sailing Adventure', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' }
+	];
+});
