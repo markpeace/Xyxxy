@@ -4,9 +4,15 @@ xyxxy.controller('UserSplash', function($scope) { })
     alert("hi");
   };
 })
+
 .controller('UserRegister', ['$scope', '$rootScope', '$location', 'ParseService', '$ionicLoading', function($scope, $rootScope, ParseService, $location, $ionicLoading) {
   $scope.register = function () {
 
+    if ($scope.register.password!=$scope.register.passwordconfirm) {
+      alert("Unable to register: Passwords did not match");
+      return;
+    }
+    
     $scope.loading = $ionicLoading.show({
       content: 'Registering',
       animation: 'fade-in',
@@ -23,11 +29,11 @@ xyxxy.controller('UserSplash', function($scope) { })
       success: function(user) {
         $rootScope.currentUser = user;
         $scope.loading.hide();
-        window.location.href="/";
+        window.location.href="#/stories/index";
       },
       error: function(user, error) {
         $scope.loading.hide();
-        alert("Unable to sign up:  "  + error.message);
+        alert("Unable to register:  "  + error.message);
       }
     });    
   };
