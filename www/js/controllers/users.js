@@ -1,9 +1,31 @@
-xyxxy.controller('UserSplash', function($scope) { })
-.controller('UserLogin', function($scope) {
-  $scope.login = function (){
-    alert("hi");
-  };
+xyxxy.controller('UserSplash', function($scope, $http) { 	
 })
+
+.controller('UserLogin', ['$scope', '$rootScope', '$location', 'ParseService', '$ionicLoading', function($scope, $rootScope, ParseService, $location, $ionicLoading) {
+  $scope.login = function () {
+    $scope.loading = $ionicLoading.show({
+      content: 'Logging In',
+      animation: 'fade-in',
+      showBackdrop: true,
+      maxWidth: 200,
+      showDelay: 500
+    });
+    
+    Parse.User.logIn($scope.login.username, $scope.login.password, {
+      success: function (user) {
+        $rootScope.currentUser = user;
+        $scope.loading.hide();
+        window.location.href="#/stories/index";
+      },
+      error: function (user, error) {
+        $scope.loading.hide();
+        alert("Error: " + error.message + " (" + error.code + ")");
+      }
+    });
+    
+  }
+}])
+
 
 .controller('UserRegister', ['$scope', '$rootScope', '$location', 'ParseService', '$ionicLoading', function($scope, $rootScope, ParseService, $location, $ionicLoading) {
   $scope.register = function () {
