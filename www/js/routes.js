@@ -4,15 +4,23 @@
 xyxxy.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/user/splash', {
+    when('/user/splash', {
         templateUrl: 'pages/user/splash.html',
         controller: 'UserSplash'
+    }).
+	when('/user/login', {
+        templateUrl: 'pages/user/login.html',
+        controller: 'UserLogin'
+    }).
+	when('/user/register', {
+        templateUrl: 'pages/user/register.html',
+        controller: 'UserRegister'
     }).
 	when('/stories/index', {
         templateUrl: 'pages/stories/index.html',
         controller: 'StoriesIndex'
     }).
       otherwise({
-        redirectTo: '/stories/index'
+        redirectTo: '/user/splash'
       });
 }]);
