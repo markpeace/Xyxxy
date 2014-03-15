@@ -1,1 +1,1 @@
-var bbb = angular.module('bbb', ['ionic'])
+var xyxxy = angular.module('xyxxy', ['ionic'])
