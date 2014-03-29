@@ -1,0 +1,19 @@
+.driftytext #kineticHolder{
+  position:absolute; 
+  -webkit-transform:rotate(-20deg);
+  top:0; left:0; bottom:0; right:0; 
+  white-space: nowrap;
+}
+
+.driftytext .textCloud {
+  color:lightgray;
+  position: absolute;
+  left: -200%;
+  width: 100%;
+  -webkit-animation: floatacross 30s;
+}
+
+@-webkit-keyframes floatacross {
+  to {left: 200%;}
+}
+
