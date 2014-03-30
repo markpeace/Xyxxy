@@ -1,19 +1,55 @@
 .driftytext #kineticHolder{
   position:absolute; 
   -webkit-transform:rotate(-20deg);
+  transform:rotate(-20deg);
   top:0; left:0; bottom:0; right:0; 
   white-space: nowrap;
 }
 
 .driftytext .textCloud {
-  color:lightgray;
+  color:#E6E6E6;
   position: absolute;
   left: -200%;
   width: 100%;
-  -webkit-animation: floatacross 30s;
+  white-space:nowrap;
+  overflow:clear;
+}
+
+.driftytext .textCloud.top {
+  font-size:3em;
+  left: -450%;
+  -webkit-animation: floatacross 10s linear;
+  animation: floatacross 10s linear;
+
+}
+
+.driftytext .textCloud.middle {
+  font-size:1.5em;
+  left: -250%;
+  -webkit-animation: floatacross 20s linear;
+   animation: floatacross 20s linear;
+  
+}
+
+.driftytext .textCloud.bottom {
+  font-size:.5em;
+  left: -100%;
+  -webkit-animation: floatacross 30s linear;
+  animation: floatacross 30s linear;
+
 }
 
 @-webkit-keyframes floatacross {
-  to {left: 200%;}
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {left: 150%; opacity: 0;}
+}
+
+@keyframes floatacross {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {left: 150%; opacity: 0;}
 }
 
